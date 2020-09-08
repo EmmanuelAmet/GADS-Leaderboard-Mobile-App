@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ConfirmSubmissionDialogFragment">
+
+    <ImageButton
+        android:id="@+id/cancel_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_close_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="18dp"
+        android:contentDescription="@string/picture" />
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_confirm"
+        android:orientation="horizontal"
+        >
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/are_you_sure"
+      android:textAppearance="@android:style/TextAppearance.Medium"
+      android:textStyle="bold"
+      />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question_mark"
+        android:textStyle="bold"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_confirm"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/yes"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_orange_dark"
+        android:background="@drawable/confirm_button_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

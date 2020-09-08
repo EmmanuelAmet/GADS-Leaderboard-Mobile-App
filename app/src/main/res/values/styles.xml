@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/design_default_color_on_secondary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_on_secondary</item>
+        <item name="colorAccent">@color/design_default_color_on_secondary</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="colorPrimary">@color/design_default_color_on_secondary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_on_secondary</item>
+        <item name="colorAccent">@color/design_default_color_on_secondary</item>
+    </style>
+
+    <style name="LoadingTheme">
+        <item name="colorPrimary">@color/design_default_color_on_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_on_primary</item>
+        <item name="colorAccent">@color/design_default_color_on_primary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ProjectSubmissionResponseDialogFragment"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/project_submission_response_image_view"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/picture"
+                tools:src="@drawable/ic_baseline_check_circle_24" />
+
+            <TextView
+                android:id="@+id/project_submission_response_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Submission Successful" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

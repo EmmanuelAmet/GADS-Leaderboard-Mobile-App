@@ -20,6 +20,9 @@ class ProjectSubmissionActivity : AppCompatActivity(), ConfirmSubmissionDialogFr
     private lateinit var submitButton: Button
     private lateinit var backButton: ImageButton
 
+    companion object{
+        val TAG = "ProjectSubmission"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_submission)
@@ -30,7 +33,6 @@ class ProjectSubmissionActivity : AppCompatActivity(), ConfirmSubmissionDialogFr
         projectLink = findViewById(R.id.project_link_edit_text)
         submitButton = findViewById(R.id.submit_button)
         backButton = findViewById(R.id.back_button)
-
 
         submitButton.setOnClickListener {
             if(checkValidInputs()){
@@ -66,11 +68,7 @@ class ProjectSubmissionActivity : AppCompatActivity(), ConfirmSubmissionDialogFr
     }
 
     override fun onConfirm() {
-        NetworkCalls.submitProject(
-            firstName.text.toString(),
-            lastName.text.toString(),
-            emailAddress.text.toString(),
-            projectLink.text.toString(),
+        NetworkCalls.submitProject(firstName.text.toString(), lastName.text.toString(), emailAddress.text.toString(), projectLink.text.toString(),
             object: Callback<Void> {
                 val bundle = Bundle()
                 val dialog = ProjectSubmissionResponseDialogFragment()
@@ -79,19 +77,18 @@ class ProjectSubmissionActivity : AppCompatActivity(), ConfirmSubmissionDialogFr
                         bundle.putBoolean("success",true)
                         dialog.arguments = bundle
                         dialog.show(supportFragmentManager,"response")
-                    }
-                    else{
+                    } else{
                         bundle.putBoolean("success",false)
                         dialog.arguments = bundle
                         dialog.show(supportFragmentManager,"response")
-                        Log.d("notSuccessful",response.body().toString())
+                        Log.d(TAG, "UnSuccessful: "+ response.body().toString())
                     }
                 }
                 override fun onFailure(call: Call<Void>, t: Throwable) {
                     bundle.putBoolean("success",false)
                     dialog.arguments = bundle
                     dialog.show(supportFragmentManager,"response")
-                    Log.d("failure",t.message.toString())
+                    Log.d(TAG,"Failure:" + t.message.toString())
                 }
             }
         )
